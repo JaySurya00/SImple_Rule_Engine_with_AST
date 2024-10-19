@@ -2,7 +2,7 @@ const Node = require('../models/node.js');
 const parseExpression = require('./parse_rule.js');
 const generateTokens = require('./generate_tokens.js');
 
-function combine_rules(rules) {
+function combine_rules(rules="") {
     const operatorCount = { AND: 0, OR: 0 };
     const conditionGroups = { AND: [], OR: [] };
 
