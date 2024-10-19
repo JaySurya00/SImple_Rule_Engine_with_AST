@@ -1,13 +1,7 @@
-class Node {
-  constructor(type, value = null, left = null, right = null) {
-    this.type = type;
-    this.value = value;
-    this.left = left;
-    this.right = right;
-  }
-}
+const Node= require('../models/node.js');
 
-function parseExpression(tokens) {
+
+function parse_rule(tokens) {
   return parseOr(tokens);
 }
 
@@ -38,7 +32,7 @@ function parseAnd(tokens) {
 function parseCondition(tokens) {
   if (tokens[0] === '(') {
     tokens.shift(); // Remove '('
-    let node = parseExpression(tokens);
+    let node = parse_rule(tokens);
     tokens.shift(); // Remove ')'
     return node;
   } else {
@@ -50,11 +44,4 @@ function parseCondition(tokens) {
   }
 }
 
-// Example usage:
-const rule = "((age > 30 AND department ='Marketing')) AND (salary > 20000 OR experience > 5)".trim();
-
-const tokens = rule.match(/\w+|[><=()]|'[^']*'|\b(?:AND|OR)\b/g);
-
-console.log("Tokens:", tokens);  // This logs the tokens before parsing the AST
-const ast = parseExpression(tokens);
-console.log(JSON.stringify(ast, null, 2)); // Outputs the Abstract Syntax Tree (AST)
+module.exports= parse_rule;

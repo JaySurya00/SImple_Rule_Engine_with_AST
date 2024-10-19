@@ -38,26 +38,4 @@ const RuleSchema = new Schema({
   },
 });
 
-// // Static method to create a new rule
-// RuleSchema.statics.createRule = function (ruleData) {
-//   const rule = new this(ruleData);
-//   return rule.save();
-// };
-
-// // Static method to find rule by ID
-// RuleSchema.statics.findByRuleId = function (ruleId) {
-//   return this.findById(ruleId);
-// };
-
-// // Static method to update an existing rule
-// RuleSchema.statics.updateRule = function (ruleId, updateData) {
-//   return this.findByIdAndUpdate(ruleId, updateData, { new: true });
-// };
-
-// // Static method to delete a rule
-// RuleSchema.statics.deleteRule = function (ruleId) {
-//   return this.findByIdAndDelete(ruleId);
-// };
-
-// Export the Rule model
 module.exports = mongoose.model('Rule', RuleSchema);
