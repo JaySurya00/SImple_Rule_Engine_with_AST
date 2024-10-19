@@ -49,13 +49,12 @@ json
 
 ## Build Instructions
  ### Clone the Repository
-
-bash
+    bash
     Copy code
     git clone <repository-url>
     cd <repository-name>
-    Setup Environment Variables
 
+**Setup Environment Variables:**
     Create a .env file in the root of the backend folder : PORT=<port-number>
 
 ### Install Backend Dependencies
@@ -72,5 +71,6 @@ bash
     bash
     npm install
     npm run dev
-    Access the Application
-    Once the servers are running, you can access the React application at the following URL:http://localhost:5173
+
+### Access the Application
+Once the servers are running, you can access the React application at the following URL:http://localhost:5173 
